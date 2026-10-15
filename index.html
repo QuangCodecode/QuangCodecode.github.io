@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Duc Quang (Cillian) Nguyen, AI Engineer</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Duc Quang (Cillian) Nguyen, AI engineer in Sydney. Built the AI behind DolphinAI: 2.5M investor questions answered as of February 2026.">
+<meta name="description" content="Duc Quang (Cillian) Nguyen, AI engineer in Sydney with 3 years of experience. Built DolphinAI (2.5M questions answered) and integrated AI into the MBS CRM. Master of Computer Science at the University of Sydney.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Duc Quang (Cillian) Nguyen, AI Engineer">
-<meta property="og:description" content="I built the AI behind DolphinAI: 2.5M investor questions, 375× scale-up, Sao Khue 2025.">
+<meta property="og:description" content="I built the AI behind DolphinAI: 2.5M questions answered, 375× scale-up, Sao Khue 2025.">
 <meta property="og:image" content="https://quangcodecode.github.io/assets/img/og-card.png">
 <meta property="og:url" content="https://quangcodecode.github.io/">
 <meta name="twitter:card" content="summary_large_image">
@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&display=swap">
 <script>document.documentElement.classList.add('js')</script>
 <style>
-/* Layout: the name as a monument over a crossfading photo → one figure owns a screen → stepped figure tiles → DolphinAI square plate → CRM photo with figure tiles → staggered award pairs → portrait drop-cap bio → contact in display rows → name returns as the footer */
+/* Layout: the name as a monument over a crossfading photo panel → one figure owns a screen → stepped figure tiles → DolphinAI square plate → CRM photo with figure tiles → staggered award pairs → portrait drop-cap bio → contact in display rows → name returns as the footer */
 :root{
   /* colours taken from the DolphinAI mascot: suit navy, suit blue, shirt white, dolphin orange */
   --bg:#0B1431; --surface:#131F47; --field:#2652C4; --field-2:#3463D6;
@@ -59,26 +59,27 @@ h1,h2,h3{font-weight:600;letter-spacing:-0.035em;line-height:0.95;text-wrap:bala
 .link{text-decoration:underline;text-decoration-color:transparent;text-underline-offset:.22em;text-decoration-thickness:.07em;transition:text-decoration-color var(--t-hover) ease}
 @media (hover:hover) and (pointer:fine){.link:hover{text-decoration-color:currentColor}}
 
-/* ---------- hero: film title, bottom edge ---------- */
-.hero{position:relative;height:100svh;min-height:560px;overflow:hidden;background:var(--bg);isolation:isolate}
-.hero-media{position:absolute;inset:0;z-index:-2}
+/* ---------- hero: film title over a photo panel that fills the right of the screen ---------- */
+.hero{position:relative;display:flex;flex-direction:column;height:100svh;min-height:600px;max-height:1000px;overflow:hidden;background:var(--bg);color:var(--ink);isolation:isolate}
+.hero-media{position:absolute;top:0;right:0;bottom:0;width:min(70vw, 1040px);z-index:-2;overflow:hidden}
 .hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.6s ease}
 .hero-media img.is-on{opacity:1}
-.hero-media img:nth-child(1){object-position:50% 64%}
-.hero-media img:nth-child(2){object-position:50% 38%}
-.hero-media img:nth-child(3){object-position:50% 30%}
-/* scrim under the name on the photo: the allowed neutral exception — taste-skill-ignore */
-.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:46%;z-index:-1;background:linear-gradient(to top, rgba(11,20,49,.92) 0%, rgba(11,20,49,.55) 55%, rgba(11,20,49,0) 100%)} /* taste-skill-ignore */
-.hero::before{content:"";position:absolute;inset:0 0 auto 0;height:120px;z-index:-1;background:linear-gradient(to bottom, rgba(11,20,49,.6), rgba(11,20,49,0))} /* taste-skill-ignore */
-.bar{position:absolute;inset:0 0 auto 0;display:flex;align-items:center;gap:28px;padding-top:max(18px, env(safe-area-inset-top, 0px));padding-bottom:18px}
+.hero-media img:nth-child(1){object-position:50% 76%}
+.hero-media img:nth-child(2){object-position:50% 34%}
+.hero-media img:nth-child(3){object-position:42% 30%}
+/* neutral scrims so the photo melts into the navy and the name stays legible — taste-skill-ignore */
+.hero-media::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to right, rgba(11,20,49,1) 0%, rgba(11,20,49,0) 28%), linear-gradient(to top, rgba(11,20,49,.95) 0%, rgba(11,20,49,.4) 30%, rgba(11,20,49,0) 50%), linear-gradient(to bottom, rgba(11,20,49,.55) 0%, rgba(11,20,49,0) 18%)} /* taste-skill-ignore */
+.bar{display:flex;align-items:center;gap:28px;padding-top:max(18px, env(safe-area-inset-top, 0px));padding-bottom:18px}
 .wordmark{font-weight:700;font-size:1.25rem;letter-spacing:-0.03em;text-decoration:none}
 .bar .links{display:flex;gap:26px;margin-left:auto;font-size:var(--step-small)}
 .bar .links a{text-decoration:none}
 .bar .btn{min-height:40px;padding:0 16px;font-size:var(--step-small)}
 .bar .only-phone{display:none}
-.hero-foot{position:absolute;inset:auto 0 0 0;padding-bottom:max(26px, env(safe-area-inset-bottom, 0px))}
-.hero-row{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:clamp(8px,1.2vw,18px)}
-.hero-line{font-size:var(--step-body);line-height:1.35;max-width:22em}
+.hero-copy{flex:1;display:flex;flex-direction:column;justify-content:center;gap:28px;max-width:max(50vw, 600px);padding-bottom:4vh}
+.hero-line{font-size:clamp(1.15rem, 0.8rem + 0.95vw, 1.65rem);line-height:1.28;letter-spacing:-0.015em;max-width:30em;text-wrap:pretty}
+.hero-line b{font-weight:600;color:var(--accent)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:10px}
+.hero-foot{padding-bottom:max(26px, env(safe-area-inset-bottom, 0px))}
 .monument{font-size:calc((100vw - 2 * var(--m)) / 10.6);font-weight:600;letter-spacing:-0.045em;line-height:0.86;white-space:nowrap;margin-left:-0.04em;display:flex;flex-wrap:wrap;column-gap:.2em}
 .monument .line{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
 .monument [data-line]{display:block}
@@ -218,12 +219,14 @@ a.crow{transition:background-color var(--t-hover) ease}
 @media (max-width: 860px){
   .bar .links{display:none}
   .bar .btn{margin-left:auto}
-  .bar .only-wide,.hero-row .only-wide{display:none!important}
   .bar .only-phone{display:inline-flex}
-  .monument{font-size:calc((100vw - 2 * var(--m)) / 6.1);line-height:.86;flex-direction:column}
-  .hero-row{flex-direction:column;align-items:flex-start;gap:16px}
-  .hero-line{font-size:15px}
+  .hero-media{width:100%}
   .hero-media img:nth-child(1){object-position:50% 46%}
+  .hero-media::after{background:linear-gradient(to top, rgba(11,20,49,.95) 0%, rgba(11,20,49,.45) 32%, rgba(11,20,49,0) 55%), linear-gradient(to bottom, rgba(11,20,49,.55) 0%, rgba(11,20,49,0) 18%)} /* taste-skill-ignore */
+  .hero-copy{justify-content:flex-end;max-width:none;padding-bottom:14px;gap:0}
+  .hero-line{font-size:var(--step-body);line-height:1.35}
+  .hero-cta{display:none}
+  .monument{font-size:calc((100vw - 2 * var(--m)) / 6.7);flex-direction:column}
   .figscreen{grid-template-columns:minmax(0,1fr);min-height:80svh}
   .figure{font-size:34vw}
   .mascot{grid-column:1;grid-row:2;justify-self:end;align-self:center;width:42vw;margin-block:24px}
@@ -282,25 +285,27 @@ a.crow{transition:background-color var(--t-hover) ease}
       <a class="link" href="#awards">Awards</a>
       <a class="link" href="#contact">Contact</a>
     </div>
-    <a class="btn btn-paper only-wide" href="assets/Duc_Quang_Nguyen_Resume.pdf" data-site-only>Résumé</a>
     <a class="btn btn-accent only-phone" href="#contact">Email me</a>
-    <a class="btn btn-paper only-wide" href="https://www.linkedin.com/in/duc-quang-ng" target="_blank" rel="noopener" data-preview-only>LinkedIn</a>
   </nav>
-  <div class="hero-foot pad">
-    <div class="hero-row">
-      <p class="hero-line" data-rise style="--i:0">AI engineer in Sydney.<br>I built the AI behind DolphinAI.</p>
-      <a class="btn btn-accent only-wide" href="#contact" data-rise style="--i:1">Email me <span class="arrow" aria-hidden="true">↗</span></a>
+  <div class="hero-copy pad">
+    <p class="hero-line" data-rise style="--i:0">AI engineer in Sydney, <b>3 years</b> of experience.<br>Built DolphinAI and integrated AI into the MBS CRM.<br>Now: <b>Master of CS at USyd</b>.</p>
+    <div class="hero-cta" data-rise style="--i:1">
+      <a class="btn btn-accent" href="#contact">Email me <span class="arrow" aria-hidden="true">↗</span></a>
+      <a class="btn btn-paper" href="assets/Duc_Quang_Nguyen_Resume.pdf" data-site-only>Résumé</a>
+      <a class="btn btn-paper" href="https://www.linkedin.com/in/duc-quang-ng" target="_blank" rel="noopener" data-preview-only>LinkedIn</a>
     </div>
-    <h1 class="monument"><span class="line"><span data-line>Duc Quang</span></span> <span class="line"><span data-line style="--i:1">(Cillian) Nguyen</span></span></h1>
+  </div>
+  <div class="hero-foot pad">
+    <h1 class="monument"><span class="line"><span data-line>Duc Quang</span></span><span class="line"><span data-line style="--i:1">(Cillian) Nguyen</span></span></h1>
   </div>
 </header>
 
 <main>
 <section class="figscreen pad" aria-labelledby="q-h">
-  <h2 id="q-h" data-reveal>Investor questions answered.</h2>
-  <p class="figure num" aria-label="2.5 million"><span data-count="2.5" data-decimals="1">2.5</span><span class="unit">M</span></p>
+  <h2 id="q-h" data-reveal>Questions answered.</h2>
+  <p class="figure num" aria-label="2.5 million questions answered"><span data-count="2.5" data-decimals="1">2.5</span><span class="unit">M</span></p>
   <img class="mascot" data-reveal src="assets/img/dolphin-mascot.png" width="292" height="273" alt="The DolphinAI mascot, an orange dolphin in a blue suit.">
-  <p class="figcap" data-reveal style="--i:1">by <b>DolphinAI</b> as of February 2026. <b>50,000 users</b> a month.</p>
+  <p class="figcap" data-reveal style="--i:1">by <b>DolphinAI</b> as of February 2026. <b>50,000 users</b> per month.</p>
 </section>
 
 <section class="tiles pad" aria-labelledby="scale-h">
